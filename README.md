@@ -1,158 +1,174 @@
 # EduBot USCS
 
-O **EduBot USCS** é uma plataforma acadêmica web criada para centralizar, organizar e facilitar o acesso dos estudantes da **Universidade Municipal de São Caetano do Sul** às principais informações institucionais.
+EduBot USCS é uma aplicação web acadêmica desenvolvida por alunos do curso de Inteligência Artificial da Universidade Municipal de São Caetano do Sul (USCS).
 
-A navegação acontece por cards de temas oficiais. O usuário escolhe um assunto, visualiza uma explicação objetiva no painel do assistente e acessa o link institucional correspondente.
+O projeto tem como objetivo facilitar o acesso dos estudantes às principais informações, serviços e recursos acadêmicos da universidade por meio de uma interface moderna, interativa e intuitiva.
 
-## Visão Geral
+---
 
-- Interface moderna com tema escuro/claro.
-- Layout responsivo para desktop, notebook, tablet e celular.
-- Cards acadêmicos organizados por categoria.
-- Mascote EduBot integrado ao cabeçalho e ao painel do assistente.
-- Busca por temas e filtros por categoria.
-- Links oficiais abrindo em nova aba.
-- Aplicação estática, pronta para deploy no Netlify.
+# Funcionalidades
 
-## Conteúdo
+* Interface responsiva para Desktop e Mobile
+* Mascote virtual interativo (EduBot)
+* Cards de navegação acadêmica
+* Balão dinâmico de informações
+* Modo Claro e Escuro
+* Efeitos sonoros e áudio de boas-vindas
+* Links rápidos para serviços institucionais
+* Organização visual moderna e amigável
+* Integração Frontend + Backend via API REST
 
-Os temas foram organizados a partir do documento **Links Edubot.docx**.
+---
 
-Temas disponíveis:
+# Tecnologias Utilizadas
 
-- Calendário acadêmico
-- Provas e sistemas de avaliação
-- Disciplina EAD
-- Dependência (DP) e adaptações
-- Acesso ao campus (MagicKey)
-- Localização e campus
-- Canais de atendimento institucional
-- Corpo docente e contatos
-- Estágio e empregabilidade
-- Cursos disponíveis
-- Secretaria e documentos
-- Biblioteca
-- Carteirinha de estudante
-- Apoio ao aluno
-- Sistemas e portal do aluno
-- Transferência de turma
+## Frontend
 
-## Tecnologias
+* React
+* TypeScript
+* Vite
+* CSS3
+* Lucide React
 
-- React
-- Vite
-- TypeScript
-- Framer Motion
-- Lucide React
-- CSS moderno
+## Backend
 
-## Estrutura
+* Python
+* FastAPI
 
-```txt
+## Ferramentas
+
+* Node.js
+* npm
+* Git
+* GitHub
+
+---
+
+# Estrutura do Projeto
+
+```bash
 edubot/
+│
 ├── frontend/
-│   ├── index.html
-│   ├── package.json
 │   ├── public/
-│   │   ├── _redirects
-│   │   ├── favicon.ico
-│   │   ├── favicon.png
-│   │   └── apple-touch-icon.png
-│   └── src/
-│       ├── App.tsx
-│       ├── api.ts
-│       ├── assets/
-│       │   └── edu-robot.png
-│       ├── components/
-│       │   ├── AssistantPanel.tsx
-│       │   ├── Dashboard.tsx
-│       │   ├── Footer.tsx
-│       │   ├── ThemeToggle.tsx
-│       │   └── TopicCard.tsx
-│       ├── data/
-│       │   ├── topics.ts
-│       │   └── types.ts
-│       ├── main.tsx
-│       └── styles/
-│           └── global.css
-├── netlify.toml
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.ts
+│
+├── backend/
+│   ├── main.py
+│   ├── requirements.txt
+│   └── ...
+│
 └── README.md
 ```
 
-## Como Rodar Localmente
+---
+
+# Como Executar o Projeto
+
+## 1. Clone o Repositório
+
+```bash
+git clone https://github.com/SEU-USUARIO/edubot-uscs.git
+```
+
+---
+
+# Frontend
+
+## Instalar Dependências
 
 ```bash
 cd frontend
 npm install
+```
+
+## Executar
+
+```bash
 npm run dev
 ```
 
-Acesse:
+O frontend ficará disponível em:
 
-```txt
+```bash
 http://localhost:5173
 ```
 
-## Scripts
+---
+
+# Backend
+
+## Instalar Dependências
 
 ```bash
-npm run dev
+cd backend
+pip install -r requirements.txt
 ```
 
-Inicia o servidor local de desenvolvimento.
+## Executar
 
 ```bash
-npm run check
+uvicorn main:app --reload
 ```
 
-Executa a checagem TypeScript.
+O backend ficará disponível em:
 
 ```bash
-npm run build
+http://localhost:8000
 ```
 
-Gera a versão de produção em `frontend/dist`.
+---
 
-```bash
-npm run preview
-```
+# Responsividade
 
-Visualiza localmente a versão de produção.
+O projeto foi desenvolvido com foco em responsividade:
 
-## Deploy
+* Desktop:
 
-O projeto é estático e está configurado para deploy no Netlify via `netlify.toml`.
+  * Tela única sem scroll
+  * Layout centralizado
+  * Melhor aproveitamento visual
 
-Configuração usada:
+* Mobile:
 
-```txt
-Build command:
-cd frontend && npm ci && npm run build
+  * Layout adaptável
+  * Scroll automático quando necessário
+  * Reorganização dinâmica dos componentes
 
-Publish directory:
-frontend/dist
-```
+---
 
-O arquivo `frontend/public/_redirects` garante que o app não mostre erro 404 ao recarregar ou abrir uma rota diretamente.
+# Funcionalidades do EduBot
 
-## Observações Técnicas
+O mascote virtual EduBot possui:
 
-- O projeto atual é frontend estático e não depende de backend em produção.
-- Os dados dos cards ficam em `frontend/src/data/topics.ts`.
-- A camada `frontend/src/api.ts` simula chamadas assíncronas usando os dados locais.
-- O mascote fica em `frontend/src/assets/edu-robot.png`.
-- Arquivos de build, dependências, logs e caches são ignorados pelo Git.
+* Balão interativo de informações
+* Áudios personalizados
+* Efeitos visuais
+* Compatibilidade com Dark Mode
+* Integração com os cards da plataforma
+
+---
+
+# Equipe
+
+Projeto desenvolvido por alunos do curso de Inteligência Artificial da USCS.
 
 ## Integrantes
 
-- Larissa Carvalho Pavan
-- Beatriz Mayumi Fernandez de Oliveira
-- Thiago Alves Serra
-- Guilherme Bezerra de Carvalho
-- Samuel Freitas Ribeiro de Castro
-- Luana Ayumi Goto
-- Maria Clara Ferreira Esteves
+* Larissa Pavan
+* Beatriz Mayumi
+* Thiago Alves
+* Guilherme Carvalho
+* Samuel de Castro
+* Luana Goto
+* Maria Esteves
 
-## Projeto Acadêmico
+---
 
-Projeto desenvolvido por alunos do curso de Inteligência Artificial da Universidade Municipal de São Caetano do Sul para a disciplina **Plataformas Computacionais para IA**.
+# Objetivo Acadêmico
+
+O EduBot foi criado com o propósito de melhorar a experiência acadêmica dos estudantes, centralizando informações importantes em uma plataforma intuitiva, moderna e acessível.
+
+---
